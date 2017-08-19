@@ -24,7 +24,7 @@ public class SampleActivity extends AppCompatActivity {
         tv.append("onClick->");
     }
 
-        @OnLongClick(R.id.btn)
+    @OnLongClick(R.id.btn)
     boolean onLongClick(View v) {
         tv.append("onLongClick->");
         return true;
