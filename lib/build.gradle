@@ -25,3 +25,22 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:appcompat-v7:25.3.1'
 }
+
+/** 以下开始是将Android Library上传到jcenter的相关配置**/
+apply plugin: 'com.novoda.bintray-release'//添加
+
+publish {
+    repoName = 'android'
+    userOrg = 'wuyifeng'//bintray.com用户名
+    groupId = 'com.wuyifeng'//jcenter上的路径
+    artifactId = 'ViewUtils'//项目名称
+    publishVersion = '1.0.0'//版本号
+    desc = '注解'//描述，不重要
+    website = 'https://bintray.com/wuyifeng'//网站，不重要
+}
+
+tasks.withType(Javadoc) {//防止编码问题
+    options.addStringOption('Xdoclint:none', '-quiet')
+    options.addStringOption('encoding', 'UTF-8')
+    options.addStringOption('charSet', 'UTF-8')
+}
